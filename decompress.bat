@@ -19,9 +19,10 @@ echo 已经尝试密码 %%i
 for /f "tokens=3*" %%a in ('dir/s "File"^|findstr /c:"个文件"') do (set size=%%a)
 echo "!size!" | findstr "," &&(
 cls
-echo 密码正确,密码为 %%i
+echo 密码可能为 %%i
+echo 请在File中查看解压出的文件，若文件正确请直接关闭本窗口，否则按任意键继续
 pause
-exit) || (echo 密码错误)
+) || (echo 密码错误)
 )
 
 cls
